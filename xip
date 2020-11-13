@@ -1,0 +1,3 @@
+#!/bin/bash
+MY_PATH="$(cd "$(dirname "${BASH_SOURCE[0]}")" && pwd)"
+DYLD_FORCE_FLAT_NAMESPACE=1 DYLD_INSERT_LIBRARIES="$MY_PATH/overrider.dylib" "$MY_PATH/xip_orig" "$@"
